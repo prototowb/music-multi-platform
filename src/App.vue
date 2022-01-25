@@ -1,5 +1,6 @@
 <template>
   <div>
+    <app-header />
 
     <!-- Introduction -->
     <section class="intro__base">
@@ -78,105 +79,24 @@
         </div>
       </div>
     </div>
-
-    <!-- Auth Modal -->
-    <div class="modal__base" id="modal">
-      <div class="modal__container">
-        <div class="backdrop__base">
-          <div class="backdrop__backdrop"></div>
-        </div>
-
-        <!-- This element is to trick the browser into centering the modal contents.
-        <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span> -->
-
-        <div class="modal__content">
-          <!-- Add margin if you want to see some of the overlay behind the modal-->
-          <!--Title-->
-          <div class="modal__titlebar">
-            <p class="modal__title">Your Account</p>
-            <!-- Modal Close Button -->
-            <div class="modal__close">
-              <i class="fas fa-times"></i>
-            </div>
-          </div>
-
-          <!-- Tabs -->
-          <ul class="modal__tabs">
-            <li class="modal__tabs-login">
-              <button class="modal__tabs-button modal__tabs-button--active" href="#">Login</button>
-            </li>
-            <li class="modal__tabs-register">
-              <button class="modal__tabs-button"
-                href="#">Register</button>
-            </li>
-          </ul>
-
-          <!-- Login Form -->
-          <form class="login__form">
-            <!-- Email -->
-            <div class="login__email">
-              <label class="login__email-label">Email</label>
-              <input type="email" class="login__email-input" placeholder="Enter Email" />
-            </div>
-            <!-- Password -->
-            <div class="login__password">
-              <label class="login__password-label">Password</label>
-              <input type="password" class="login__password-input" placeholder="Password" />
-            </div>
-            <button type="submit" class="login__button--submit">Submit</button>
-          </form>
-          <!-- Registration Form -->
-          <form class="registration__form">
-            <!-- Name -->
-            <div class="registration__name">
-              <label class="registration__name-label">Name</label>
-              <input type="text" class="registration__name-input" placeholder="Enter Name" />
-            </div>
-            <!-- Email -->
-            <div class="registration__email">
-              <label class="registration__email-label">Email</label>
-              <input type="email" class="registration__email-input" placeholder="Enter Email" />
-            </div>
-            <!-- Age -->
-            <div class="registration__age">
-              <label class="registration__age-label">Age</label>
-              <input type="number" class="registration__age-input" />
-            </div>
-            <!-- Password -->
-            <div class="registration__password">
-              <label class="registration__password-label">Password</label>
-              <input type="password" class="registration__password-input" placeholder="Password" />
-            </div>
-            <!-- Confirm Password -->
-            <div class="registration__pwconfirm">
-              <label class="registration__pwconfirm-label">Confirm Password</label>
-              <input type="password" class="registration__pwconfirm-input"
-              placeholder="Confirm Password" />
-            </div>
-            <!-- Country -->
-            <div class="registration__country">
-              <label class="registration__country-label">Country</label>
-              <select class="registration__country-input">
-                <option value="USA">USA</option>
-                <option value="Mexico">Mexico</option>
-                <option value="Germany">Germany</option>
-              </select>
-            </div>
-            <!-- TOS -->
-            <div class="registration__tos">
-              <input
-                type="checkbox"
-                class="registration__tos-input"
-              />
-              <label class="registration__tos-label">Accept terms of service</label>
-            </div>
-            <button type="submit" class="registration__button--submit">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
   </div>
+
+  <auth-modal />
+
 </template>
+
+<script>
+import AppHeader from './components/Header.vue';
+import AuthModal from './components/Auth.vue';
+
+export default {
+  name: 'App',
+  components: {
+    AppHeader,
+    AuthModal
+  },
+}
+</script>
 
 <style lang="scss">
 body {
@@ -357,19 +277,48 @@ ul {
 // player__duration
 
 .modal__base {
-  display: none;
+
 }
 
-// modal__container
-// backdrop__base
-// backdrop__backdrop
-// modal__content
+.modal__container {
+
+}
+
+.backdrop__base {
+
+}
+
+// .backdrop__backdrop {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   height: 100vh;
+//   width: 100%;
+//   background-color: rgba(0, 0, 0, 0.45);
+//   z-index: 10;
+// }
+
+// .modal__content {
+//   position: fixed;
+//   top: 20vh;
+//   left: 10%;
+//   width: 80%;
+//   z-index: 100;
+//   border-radius: 12px;
+//   border: none;
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+//   padding: 0;
+//   margin: 0;
+//   overflow: hidden;
+//   background-color: white;
+// }
+
 // modal__titlebar
 // modal__title
-// modal__close
 // modal__tabs
 // modal__tabs-login
-// modal__tabs-button modal__tabs-button--active
+// modal__tabs-button
+// modal__tabs-button--active
 // modal__tabs-register
 // modal__tabs-button
 // login__form

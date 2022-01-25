@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@vee-validate/rules": "^4.5.7",
     "core-js": "^3.6.5",
     "quasar": "^2.0.0",
+    "vee-validate": "^4.5.7",
     "vuex": "^4.0.1"
   },
   "devDependencies": {

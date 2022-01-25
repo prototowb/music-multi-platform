@@ -15,8 +15,15 @@ import { createStore } from 'vuex'
 export default store(function (/* { ssrContext } */) {
   const Store = createStore({
     state: {
+      authModalShow: false,
     },
     mutations: {
+      toggleAuthModal: (state) => {
+        state.authModalShow = !state.authModalShow;
+      }
+    },
+    getters: {
+      getAuthModalShow: (state) => state.authModalShow,
     },
     actions: {
     },

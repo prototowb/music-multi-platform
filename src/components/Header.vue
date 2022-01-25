@@ -9,7 +9,7 @@
         <ul class="nav__menu">
           <!-- Navigation Links -->
           <li>
-            <a class="nav__link" href="#">Login / Register</a>
+            <a class="nav__link" href="#" @click.prevent="toggleAuthModal">Login / Register</a>
           </li>
           <li>
             <a class="nav__link" href="#">Manage</a>
@@ -19,3 +19,18 @@
     </div>
   </header>
 </template>
+
+<script>
+import { mapMutations } from 'vuex';
+
+  export default {
+    name: 'Header',
+    methods: {
+      ...mapMutations(['toggleAuthModal']),
+      // toggleAuthModal() {
+      //   this.$store.commit('toggleAuthModal');
+      //   console.log(this.$store.state.authModalShow);
+      // },
+    },
+  };
+</script>
